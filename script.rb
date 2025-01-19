@@ -5,10 +5,14 @@ def caesar_cipher(string, number)
   string = string.to_s unless string.is_a?(String)
   number = number.to_i unless number.is_a?(Integer)
 
-  string.downcase.chars.each do |char|
-    if alphabet.include?(char)
-      new_index = (alphabet.index(char) + number) % alphabet.length
-      cipher_text += alphabet[new_index]
+  string.chars.each do |char|
+    if alphabet.include?(char.downcase)
+      is_uppercase = char == char.upcase
+      new_index = (alphabet.index(char.downcase) + number) % alphabet.length
+      new_char = alphabet[new_index]
+
+      new_char = new_char.upcase if is_uppercase
+      cipher_text += new_char
     else
       cipher_text += char
     end
@@ -16,3 +20,5 @@ def caesar_cipher(string, number)
 
   puts "#{string} -> #{cipher_text}"
 end
+
+caesar_cipher('OPA', 3)
