@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def caesar_cipher(string, number)
   alphabet = Array('a'..'z')
   cipher_text = ''
@@ -20,3 +22,8 @@ def caesar_cipher(string, number)
 
   puts "#{string} -> #{cipher_text}"
 end
+
+puts 'Enter the text you want to cipher:'
+text = gets.chomp
+puts 'Enter the cipher key:'
+caesar_cipher(text, gets.chomp.to_i)
