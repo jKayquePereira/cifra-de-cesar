@@ -17,6 +17,6 @@ def caesar_cipher(string, number)
       cipher_text += char
     end
   end
-end
 
-caesar_cipher('OPA', 3)
+  puts "#{string} -> #{cipher_text}"
+end
