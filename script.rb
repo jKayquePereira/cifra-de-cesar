@@ -18,3 +18,5 @@ def caesar_cipher(string, number)
     end
   end
 end
+
+caesar_cipher('OPA', 3)
